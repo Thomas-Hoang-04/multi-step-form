@@ -176,3 +176,4 @@ sketch
 multi-step-form-main/
 
 # End of https://www.toptal.com/developers/gitignore/api/node,react,visualstudiocode
+.vercel
