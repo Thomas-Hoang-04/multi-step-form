@@ -1,0 +1,63 @@
+@tailwind components;
+
+@layer components {
+  .form-input {
+    @apply w-full rounded-md border px-4 py-2 tracking-tight text-marine focus:border-purplish focus-visible:border-purplish active:border-purplish lg:py-[0.6rem] lg:text-[1.125rem] lg:hover:border-purplish;
+  }
+
+  .thank-you {
+    @apply ml-0 flex w-full flex-col items-center justify-center gap-3 rounded-lg bg-white px-7 py-[4.5rem] font-medium leading-6 shadow-lg lg:rounded-none lg:px-[4.75rem] lg:shadow-none;
+  }
+}
+
+.toggle-switch {
+  position: relative;
+  width: var(--w);
+  height: var(--h);
+  --light: hsl(231, 100%, 99%);
+  --dark: hsl(213, 96%, 18%);
+  --w: 42px;
+  --h: 21px;
+  --r: 13px;
+  --left: 23.7px;
+  --o-left: 4.15px;
+}
+
+.switch-label {
+  position: absolute;
+  width: 100%;
+  height: var(--h);
+  background-color: var(--dark);
+  border-radius: 100vw;
+  cursor: pointer;
+}
+
+.checkbox {
+  position: absolute;
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 100vw;
+  transition: 0.3s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: var(--left);
+  width: var(--r);
+  height: var(--r);
+  border-radius: 50%;
+  background-color: var(--light);
+  transform: rotateZ(20deg);
+  transition: 0.3s;
+}
+
+.checkbox:checked ~ .slider::before {
+  transform: translateX(calc(-1 * (var(--left) - var(--o-left))));
+}
