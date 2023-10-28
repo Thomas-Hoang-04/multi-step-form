@@ -23,7 +23,9 @@ export function StepNav({ handleAdvance, valid = true, desktop = false }) {
         Go Back
       </button>
       <button
-        className="rounded-md bg-marine px-5 py-3 text-white disabled:bg-marine/50 lg:px-6 lg:tracking-wide lg:hover:bg-marine_hover"
+        className={`rounded-md bg-marine px-5 py-3 text-white disabled:bg-marine/50 lg:px-6 lg:tracking-wide${
+          valid ? " lg:hover:bg-marine_hover" : ""
+        }`}
         onClick={handleAdvance}
         disabled={!valid}
       >
